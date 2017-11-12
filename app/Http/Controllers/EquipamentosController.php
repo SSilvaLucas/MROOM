@@ -8,7 +8,7 @@ use App\Equipamento;
 
 class EquipamentosController extends Controller{
     public function index(){
-      $equipamento = Equipamento::all();
-      return view('listaEquipamentos');
+      $equipamentos = Equipamento::all();
+      return view('equipamentos.listaEquipamentos', array('equipamentos'=>$equipamentos));
     }
 }
