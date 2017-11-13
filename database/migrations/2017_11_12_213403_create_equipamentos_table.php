@@ -13,7 +13,7 @@ class CreateEquipamentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('equipamento', function (Blueprint $table) {
+        Schema::create('equipamentos', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('idEquipamento');
             // $table->integer('fkTipoEquipamento');
