@@ -1,5 +1,8 @@
+@extends('layout.app')
 
+@section('title','Equipamentos')
 
+@section('conteudo')
 <div class="container container-fluid">
   <table id="tabela-dados" class="table table-striped">
       <thead class="thead-inverse">
@@ -29,8 +32,9 @@
                 ...
               </div>
             </div>
-          </tr>  
+          </tr>
           @endforeach
       </tbody>
   </table>
 </div>
+@endsection
