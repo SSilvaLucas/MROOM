@@ -22,7 +22,7 @@ class CreateEquipamentosTable extends Migration
             $table->date('ultimaManutencao');
             $table->string('imagemEquipamento')->nullable($value = true);
             $table->string('descricao', 200)->nullable($value = true);
-            $table->integer('manutencoesConcluídas');
+            $table->integer('manutencoesConcluidas');
             $table->timestamps();
 
             // $table->foreign('fkTipoEquipamento')

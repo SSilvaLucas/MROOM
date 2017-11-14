@@ -11,4 +11,8 @@ class EquipamentosController extends Controller{
       $equipamentos = Equipamento::all();
       return view('equipamentos.listaEquipamentos', array('equipamentos'=>$equipamentos));
     }
+
+    public function create(){
+      return view('equipamentos.create');
+    }
 }

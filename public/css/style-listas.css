@@ -1,0 +1,13 @@
+.collapse .detalhes-lista{
+  border: none;
+  background: #fff;
+}
+
+@media (max-width: 768px){
+  body{
+      font-size: 1em;
+  }
+  .item-lista .btn-lista{
+      font-size: 1em;
+  }
+}
