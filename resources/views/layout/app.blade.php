@@ -6,7 +6,8 @@
     <title>MROOM - @yield('title')</title>
     {{Html::style('css/bootstrap.min.css')}}
     {{Html::style('css/bootstrap-thema.min.css')}}
-    {{Html::style('css/style-listas.css')}}
+    {{Html::style('css/style-sistema.css')}}
+    @stack('css')
 </head>
 
 <body>
@@ -36,10 +37,10 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lucas <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Minha Conta</a></li>
-                                <li><a href="#">Configurações do Sitema</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-user"></span>  Minha Conta</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-cog"></span>  Configurações do Sitema</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Sair</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>  Sair</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -54,5 +55,6 @@
     </main>
     {{Html::script('js/jquery-3.2.1.min.js')}}
     {{Html::script('js/bootstrap.min.js')}}
+    @stack('scripts')
 </body>
 </html>

@@ -1,0 +1,67 @@
+.btn-acoes{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-cadastrar{
+    display: block;
+    width: 15em;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+.btns-cadastro{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.btn-form{
+    margin-top: 1em;
+    width: 7em;
+}
+.form-config{
+    max-width: 40em;
+    padding: 2em;
+    border: 1px solid #ccc;
+    border-radius: .3em;
+    margin: 0 auto 10em auto;
+}
+.title-secao-h2{
+    text-align: center;
+    font-size: .8em;
+}
+.title-secao-h2 h2{
+    font-size: 2em;
+}
+.title-secao-h3{
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+
+@media (min-width: 768px){
+  .btn-acoes{
+      justify-content: space-around;
+  }
+  .btns-cadastro{
+      justify-content: space-around;
+  }
+  .btn-form{
+      width: 10em;
+  }
+  .coluna-acoes{
+      width: 8em;
+  }
+  .title-secao-h2{
+      text-align: center;
+      font-size: 1em;
+      margin-top: 3em;
+      margin-bottom: 3em;
+  }
+  .title-secao-h2 h2{
+      font-size: 2em;
+  }
+  .title-secao-h3{
+      font-size: 1.3em;
+      margin-bottom: 1em;
+  }
+}

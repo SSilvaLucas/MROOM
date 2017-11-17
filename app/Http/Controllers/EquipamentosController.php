@@ -15,4 +15,16 @@ class EquipamentosController extends Controller{
     public function create(){
       return view('equipamentos.create');
     }
+
+    public function store(Request $request){
+      $equipamento = new Equipamento();
+      $equipamento->numeroEquipamento = $request->input('numero');
+      $equipamento->ultimaManutencao = $request->input('ultimaManutencao');
+      // $equipamento->imagemEquipamento = $request->input('imagem');
+      $equipamento->descricao = $request->input('descricao');
+      $equipamento->manutencoesConcluidas = 2;
+      if($equipamento->save()){
+        return redirect('equipamentos');
+      }
+    }
 }
