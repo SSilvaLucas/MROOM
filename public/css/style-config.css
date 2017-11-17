@@ -24,6 +24,14 @@
     border-radius: .3em;
     margin: 0 auto 10em auto;
 }
+.legend{
+    text-align: center;
+    font-size: 1.2em;
+}
+.table-responsive{
+    max-height: 20em;
+    overflow: auto;
+}
 .title-secao-h2{
     text-align: center;
     font-size: .8em;
@@ -50,6 +58,10 @@
   }
   .coluna-acoes{
       width: 8em;
+      text-align: center;
+  }
+  .table-responsive{
+      margin-bottom: 4em;
   }
   .title-secao-h2{
       text-align: center;

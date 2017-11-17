@@ -7,6 +7,12 @@ use App\Http\Controllers\Controller;
 use App\Models\Painel\TipoEquipamento;
 
 class TipoEquipamentoController extends Controller{
+
+    private $tipoEquipamento;
+
+    public function __construct(TipoEquipamento $tipoEquipamento){
+      $this->tipoEquipamento = $tipoEquipamento;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,7 @@ class TipoEquipamentoController extends Controller{
      */
     public function index(TipoEquipamento $tipo){
         $tipos = $tipo->all();
-        return view('painel.tipo_equipamento.index', compact('tipos'));
+        return view('painel.tipo-equipamento.index', compact('tipos'));
     }
 
     /**
@@ -24,7 +30,7 @@ class TipoEquipamentoController extends Controller{
      */
     public function create(TipoEquipamento $tipo){
         $tipos = $tipo->all();
-        return view('painel.tipo_equipamento.create', compact('tipos'));
+        return view('painel.tipo-equipamento.create', compact('tipos'));
     }
 
     /**
@@ -34,7 +40,21 @@ class TipoEquipamentoController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-        //
+        $dataForm = $request->all();
+
+        if(!isset($dataForm['descricao']) || $dataForm['descricao'] == ''){
+            $dataForm['descricao'] = 'Não há descrição';
+        }
+
+        $this->validate($request, $this->tipoEquipamento->rules, $this->tipoEquipamento->msg);
+
+        $insert = $this->tipoEquipamento->create($dataForm);
+
+        if($insert){
+            return redirect('/configuracoes/tipos-equipamentos');
+        }else{
+            return redirect()->back();
+        }
     }
 
     /**
@@ -54,9 +74,10 @@ class TipoEquipamentoController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit($id){
+        $tipo = $this->tipoEquipamento->find($id);
+
+        return view('painel.tipo-equipamento.edit', compact('tipo'));
     }
 
     /**
@@ -66,9 +87,24 @@ class TipoEquipamentoController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, $id){
+        $dataForm = $request->all();
+
+        $tipo = $this->tipoEquipamento->find($id);
+
+        if(!isset($dataForm['descricao']) || $dataForm['descricao'] == ''){
+            $dataForm['descricao'] = 'Não há descrição';
+        }
+
+        $this->validate($request, $this->tipoEquipamento->rules, $this->tipoEquipamento->msg);
+
+        $update = $tipo->update($dataForm);
+
+        if($update){
+          return redirect('/configuracoes/tipos-equipamentos');
+        }else{
+          return redirect()->back();
+        }
     }
 
     /**

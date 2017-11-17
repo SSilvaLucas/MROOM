@@ -57,30 +57,6 @@
       <h2>Tipos de Equipamentos</h2>
       <p>Esta seção corresponde aos tipos de equipamentos disponíveis para cadastro</p>
     </div>
-    <h3 class="title-secao-h3">Lista de Tipos de Equipamentos disponíveis no sistema:</h3>
-    <div class="table-responsive">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Descrição</th>
-                    <th class="coluna-acoes">Ação</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($tipos as $tipo)
-                  <tr>
-                    <td>{{$tipo->nome}}</td>
-                    <td>{{$tipo->descricao}}</td>
-                    <td class="btn-acoes">
-                      <a class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>
-                      <a class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
-                    </td>
-                  </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
     @yield('secao-config')
   </div>
 @endsection
