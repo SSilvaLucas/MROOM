@@ -13,32 +13,23 @@ class TipoEquipamentoController extends Controller{
     public function __construct(TipoEquipamento $tipoEquipamento){
       $this->tipoEquipamento = $tipoEquipamento;
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+
+
     public function index(TipoEquipamento $tipo){
         $tipos = $tipo->all();
         return view('painel.tipo-equipamento.index', compact('tipos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function create(TipoEquipamento $tipo){
         $tipos = $tipo->all();
         return view('painel.tipo-equipamento.create', compact('tipos'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function store(Request $request){
         $dataForm = $request->all();
 
@@ -47,7 +38,6 @@ class TipoEquipamentoController extends Controller{
         }
 
         $this->validate($request, $this->tipoEquipamento->rules, $this->tipoEquipamento->msg);
-
         $insert = $this->tipoEquipamento->create($dataForm);
 
         if($insert){
@@ -57,47 +47,28 @@ class TipoEquipamentoController extends Controller{
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+
+
+    public function show($id){
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function edit($id){
         $tipo = $this->tipoEquipamento->find($id);
-
         return view('painel.tipo-equipamento.edit', compact('tipo'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function update(Request $request, $id){
         $dataForm = $request->all();
-
         $tipo = $this->tipoEquipamento->find($id);
 
         if(!isset($dataForm['descricao']) || $dataForm['descricao'] == ''){
             $dataForm['descricao'] = 'Não há descrição';
         }
-
         $this->validate($request, $this->tipoEquipamento->rules, $this->tipoEquipamento->msg);
-
         $update = $tipo->update($dataForm);
 
         if($update){
@@ -107,14 +78,17 @@ class TipoEquipamentoController extends Controller{
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+
+
+    public function destroy($id){
+        $tipo = $this->tipoEquipamento->find($id);
+
+        $delete = $tipo->delete();
+
+        if($delete){
+          return redirect()->route('tipos-equipamentos.index');
+        }else{
+          return redirect()->route('tipos-equipamentos.edit', $id)->with(['errors' => 'Falha ao deletar']);
+        }
     }
 }

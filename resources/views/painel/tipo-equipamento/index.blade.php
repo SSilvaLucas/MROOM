@@ -2,6 +2,15 @@
 
 @section('secao-config')
 <h3 class="title-secao-h3">Lista de Tipos de Equipamentos disponíveis no sistema:</h3>
+
+@if(isset($errors) && count($errors) > 0)
+<div class="alert alert-danger">
+  @foreach ($errors->all() as $error)
+    <p>{{$error}}</p>
+  @endforeach
+</div>
+@endif
+
 <div class="table-responsive">
     <table class="table table-bordered">
         <thead>
@@ -18,7 +27,9 @@
                 <td>{{$tipo->descricao}}</td>
                 <td class="btn-acoes">
                   <a class="btn btn-primary" href="{{route('tipos-equipamentos.edit', $tipo->id)}}"><span class="glyphicon glyphicon-pencil"></span></a>
-                  <a class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                  {!! Form::open(['route' => ['tipos-equipamentos.destroy', $tipo->id], 'method' => 'DELETE']) !!}
+                    <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
+                  {!! Form::close() !!}
                 </td>
               </tr>
             @endforeach
