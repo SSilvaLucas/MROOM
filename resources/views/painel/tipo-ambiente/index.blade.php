@@ -1,7 +1,7 @@
 @extends('layout.config')
 
 @section('secao-config')
-<h3 class="title-secao-h3">Lista de tipos de equipamentos disponíveis no sistema:</h3>
+<h3 class="title-secao-h3">Lista de tipos de ambientes disponíveis no sistema:</h3>
 
 @if(isset($errors) && count($errors) > 0)
 <div class="alert alert-danger">
@@ -12,8 +12,8 @@
 @endif
 
 <div class="title-secao-h2">
-  <h2>Tipos de Equipamentos</h2>
-  <p>Esta seção corresponde aos tipos de equipamentos disponíveis para cadastro</p>
+  <h2>Tipos de Ambientes</h2>
+  <p>Esta seção corresponde aos tipos de ambientes disponíveis para cadastro</p>
 </div>
 <div class="table-responsive">
     <table class="table table-bordered">
@@ -31,7 +31,7 @@
                 <td>{{$tipo->descricao}}</td>
                 <td class="btn-acoes">
                   <a class="btn btn-primary" href="{{route('tipos-equipamentos.edit', $tipo->id)}}"><span class="glyphicon glyphicon-pencil"></span></a>
-                  {!! Form::open(['route' => ['tipos-equipamentos.destroy', $tipo->id], 'method' => 'DELETE']) !!}
+                  {!! Form::open(['route' => ['tipos-ambientes.destroy', $tipo->id], 'method' => 'DELETE']) !!}
                     <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
                   {!! Form::close() !!}
                 </td>
@@ -40,7 +40,7 @@
         </tbody>
     </table>
 </div>
-  <a class="btn btn-success btn-cadastrar" href="{{url("/configuracoes/tipos-equipamentos/create")}}">
+  <a class="btn btn-success btn-cadastrar" href="{{route('tipos-equipamentos.create')}}">
     <span class="glyphicon glyphicon-plus"></span> Cadastrar novo tipo
   </a>
 @endsection

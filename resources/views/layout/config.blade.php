@@ -49,14 +49,10 @@
           Ambientes <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-          <li><a href="#">Tipos de Ambientes</a></li>
+          <li><a href="{{route('tipos-ambientes.index')}}">Tipos de Ambientes</a></li>
         </ul>
       </li>
     </ul>
-    <div class="title-secao-h2">
-      <h2>Tipos de Equipamentos</h2>
-      <p>Esta seção corresponde aos tipos de equipamentos disponíveis para cadastro</p>
-    </div>
     @yield('secao-config')
   </div>
 @endsection
