@@ -41,7 +41,7 @@
           Equipamentos <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-          <li><a href="#">Tipos de Equipamentos</a></li>
+          <li><a href="{{route('tipos-equipamentos.index')}}">Tipos de Equipamentos</a></li>
         </ul>
       </li>
       <li role="presentation" class="dropdown">
