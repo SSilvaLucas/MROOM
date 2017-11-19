@@ -1,7 +1,6 @@
 @extends('layout.config')
 
 @section('secao-config')
-<h3 class="title-secao-h3">Lista de tipos de equipamentos disponíveis no sistema:</h3>
 
 @if(isset($errors) && count($errors) > 0)
 <div class="alert alert-danger">
@@ -15,6 +14,7 @@
   <h2>Tipos de Equipamentos</h2>
   <p>Esta seção corresponde aos tipos de equipamentos disponíveis para cadastro</p>
 </div>
+<h3 class="title-secao-h3">Lista de tipos de equipamentos disponíveis no sistema:</h3>
 <div class="table-responsive">
     <table class="table table-bordered">
         <thead>

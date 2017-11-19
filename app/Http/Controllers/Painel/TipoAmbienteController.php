@@ -48,19 +48,32 @@ class TipoAmbienteController extends Controller{
 
 
     public function show($id){
-        //
     }
 
 
 
     public function edit($id){
-        //
+        $tipo = $this->tipoAmbiente->find($id);
+        return view('painel.tipo-ambiente.edit', compact('tipo'));
     }
 
 
 
     public function update(Request $request, $id){
+        $dataForm = $request->all();
+        $tipo = $this->tipoAmbiente->find($id);
 
+        if(!isset($dataForm['descricao']) || $dataForm['descricao'] == ''){
+            $dataForm['descricao'] = 'Não há descrição';
+        }
+        $this->validate($request, $this->tipoAmbiente->rules, $this->tipoAmbiente->msg);
+        $update = $tipo->update($dataForm);
+
+        if($update){
+          return redirect('/configuracoes/tipos-ambientes');
+        }else{
+          return redirect()->back();
+        }
     }
 
 
