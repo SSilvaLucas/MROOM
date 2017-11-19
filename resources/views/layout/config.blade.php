@@ -31,7 +31,7 @@
           Reservas <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-          <li><a href="#">Horários</a></li>
+          <li><a href="{{route('horarios.index')}}">Horários</a></li>
           <li role="separator" class="divider"></li>
           <li><a href="{{route('status-reservas.index')}}">Status de Reserva</a></li>
         </ul>

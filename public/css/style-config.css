@@ -24,10 +24,33 @@
     border-radius: .3em;
     margin: 0 auto 10em auto;
 }
+.form-horario{
+    display: flex;
+    justify-content: center;
+}
+  .form-horario input{
+      max-width: 5em;
+  }
+  .form-horario p{
+      padding: .5em;
+      margin-bottom: 1.1em;
+      align-self: flex-end;
+  }
 .legend{
     text-align: center;
     font-size: 1.2em;
 }
+.table-horario{
+    max-width: 20em;
+    margin: 0 auto;
+}
+  .table-horario td:first-child{
+      width: 15em;
+      text-align: center;
+  }
+  .table-horario th{
+      text-align: center;
+  }
 .table-responsive{
     max-height: 20em;
     overflow: auto;

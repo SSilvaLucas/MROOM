@@ -12,4 +12,6 @@ Route::group(['namespace' => 'Painel'], function(){
     Route::resource('/configuracoes/tipos-ambientes', 'TipoAmbienteController');
 
     Route::resource('/configuracoes/status-reservas', 'StatusReservaController');
+
+    Route::resource('/configuracoes/horarios', 'HorarioController');
 });
