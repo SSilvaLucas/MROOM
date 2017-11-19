@@ -80,6 +80,14 @@ class StatusReservaController extends Controller{
 
 
     public function destroy($id){
+        $status = $this->statusReserva->find($id);
 
+        $delete = $status->delete();
+
+        if($delete){
+          return redirect()->route('status-reservas.index');
+        }else{
+          return redirect()->route('status-reservas.edit', $id)->with(['errors' => 'Falha ao deletar']);
+        }
     }
 }
