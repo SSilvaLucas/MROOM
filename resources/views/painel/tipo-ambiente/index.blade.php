@@ -30,7 +30,7 @@
                 <td>{{$tipo->nome}}</td>
                 <td>{{$tipo->descricao}}</td>
                 <td class="btn-acoes">
-                  <a class="btn btn-primary" href="{{route('tipos-equipamentos.edit', $tipo->id)}}"><span class="glyphicon glyphicon-pencil"></span></a>
+                  <a class="btn btn-primary" href="{{route('tipos-ambientes.edit', $tipo->id)}}"><span class="glyphicon glyphicon-pencil"></span></a>
                   {!! Form::open(['route' => ['tipos-ambientes.destroy', $tipo->id], 'method' => 'DELETE']) !!}
                     <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
                   {!! Form::close() !!}
@@ -40,7 +40,7 @@
         </tbody>
     </table>
 </div>
-  <a class="btn btn-success btn-cadastrar" href="{{route('tipos-equipamentos.create')}}">
+  <a class="btn btn-success btn-cadastrar" href="{{route('tipos-ambientes.create')}}">
     <span class="glyphicon glyphicon-plus"></span> Cadastrar novo tipo
   </a>
 @endsection

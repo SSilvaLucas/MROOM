@@ -21,14 +21,28 @@ class TipoAmbienteController extends Controller{
 
 
 
-    public function create(){
-        //
+    public function create(TipoAmbiente $tipo){
+        $tipos = $tipo->all();
+        return view('painel.tipo-ambiente.create', compact('tipos'));
     }
 
 
 
     public function store(Request $request){
-        //
+      $dataForm = $request->all();
+
+      if(!isset($dataForm['descricao']) || $dataForm['descricao'] == ''){
+          $dataForm['descricao'] = 'Não há descrição';
+      }
+
+      $this->validate($request, $this->tipoAmbiente->rules, $this->tipoAmbiente->msg);
+      $insert = $this->tipoAmbiente->create($dataForm);
+
+      if($insert){
+          return redirect('/configuracoes/tipos-ambientes');
+      }else{
+          return redirect()->back();
+      }
     }
 
 
