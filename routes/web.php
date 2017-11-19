@@ -10,4 +10,6 @@ Route::group(['namespace' => 'Painel'], function(){
     Route::post('/configuracoes/tipos-equipamentos/store', 'TipoEquipamentoController@store');
 
     Route::resource('/configuracoes/tipos-ambientes', 'TipoAmbienteController');
+
+    Route::resource('/configuracoes/status-reservas', 'StatusReservaController');
 });
