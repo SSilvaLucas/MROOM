@@ -14,4 +14,6 @@ Route::group(['namespace' => 'Painel'], function(){
     Route::resource('/configuracoes/status-reservas', 'StatusReservaController');
 
     Route::resource('/configuracoes/horarios', 'HorarioController');
+
+    Route::resource('/configuracoes/setores', 'SetorController');
 });

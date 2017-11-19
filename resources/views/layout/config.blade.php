@@ -15,7 +15,7 @@
           Funcionários <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-          <li><a href="#">Setores</a></li>
+          <li><a href="{{route('setores.index')}}">Setores</a></li>
           <li role="separator" class="divider"></li>
           <li><a href="#">DDD Telefones</a></li>
           <li role="separator" class="divider"></li>

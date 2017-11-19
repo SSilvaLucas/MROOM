@@ -4,12 +4,12 @@ namespace App\Models\Painel;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TipoAmbiente extends Model{
+class Setore extends Model{
     protected $fillable = ['id', 'nome', 'descricao'];
     // protected $guarded = [];
 
     public $rules = [
-        'nome'      => 'required|unique:tipo_ambientes,nome,id|min:4|max:30',
+        'nome'      => 'required|unique:setores,nome,id|min:4|max:50',
         'descricao' => 'required|min:5|max:200',
     ];
 
@@ -17,7 +17,7 @@ class TipoAmbiente extends Model{
         'nome.required' => 'O campo nome precisa ser preenchido!',
         'nome.unique' => 'Este nome já está cadastrado no sistema!',
         'nome.min' => 'O campo nome deve ter no mínimo 4 caracteres.',
-        'nome.max' => 'O campo nome deve ter no máximo 30 caracteres.',
+        'nome.max' => 'O campo nome deve ter no máximo 50 caracteres.',
         'descricao.required' => 'O campo descrição precisa ser preenchido!',
         'descricao.min' => 'O campo descrição deve ter no mínimo 5 caracteres.',
         'descricao.max' => 'O campo descrição deve ter no máximo 200 caracteres.',

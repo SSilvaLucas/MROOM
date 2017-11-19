@@ -29,20 +29,20 @@ class TipoAmbienteController extends Controller{
 
 
     public function store(Request $request){
-      $dataForm = $request->all();
+        $dataForm = $request->all();
 
-      if(!isset($dataForm['descricao']) || $dataForm['descricao'] == ''){
-          $dataForm['descricao'] = 'Não há descrição';
-      }
+        if(!isset($dataForm['descricao']) || $dataForm['descricao'] == ''){
+            $dataForm['descricao'] = 'Não há descrição';
+        }
 
-      $this->validate($request, $this->tipoAmbiente->rules, $this->tipoAmbiente->msg);
-      $insert = $this->tipoAmbiente->create($dataForm);
+        $this->validate($request, $this->tipoAmbiente->rules, $this->tipoAmbiente->msg);
+        $insert = $this->tipoAmbiente->create($dataForm);
 
-      if($insert){
-          return redirect('/configuracoes/tipos-ambientes');
-      }else{
-          return redirect()->back();
-      }
+        if($insert){
+            return redirect('/configuracoes/tipos-ambientes');
+        }else{
+            return redirect()->back();
+        }
     }
 
 
