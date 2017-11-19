@@ -30,8 +30,8 @@
                 <td>{{$stat->nome}}</td>
                 <td>{{$stat->descricao}}</td>
                 <td class="btn-acoes">
-                  <a class="btn btn-primary" href="{{route('status-reservas.edit', $status->id)}}"><span class="glyphicon glyphicon-pencil"></span></a>
-                  {!! Form::open(['route' => ['status-reservas.destroy', $status->id], 'method' => 'DELETE']) !!}
+                  <a class="btn btn-primary" href="{{route('status-reservas.edit', $stat->id)}}"><span class="glyphicon glyphicon-pencil"></span></a>
+                  {!! Form::open(['route' => ['status-reservas.destroy', $stat->id], 'method' => 'DELETE']) !!}
                     <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
                   {!! Form::close() !!}
                 </td>

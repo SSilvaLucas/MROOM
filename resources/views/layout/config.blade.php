@@ -33,7 +33,7 @@
         <ul class="dropdown-menu">
           <li><a href="#">Horários</a></li>
           <li role="separator" class="divider"></li>
-          <li><a href="#">Status de Reserva</a></li>
+          <li><a href="{{route('status-reservas.index')}}">Status de Reserva</a></li>
         </ul>
       </li>
       <li role="presentation" class="dropdown">

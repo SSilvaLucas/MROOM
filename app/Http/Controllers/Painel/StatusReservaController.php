@@ -21,14 +21,28 @@ class StatusReservaController extends Controller{
 
 
 
-    public function create(){
-
+    public function create(StatusReserva $stat){
+        $status = $stat->all();
+        return view('painel.status-reserva.create', compact('status'));
     }
 
 
 
     public function store(Request $request){
+        $dataForm = $request->all();
 
+        if(!isset($dataForm['descricao']) || $dataForm['descricao'] == ''){
+            $dataForm['descricao'] = 'Não há descrição';
+        }
+
+        $this->validate($request, $this->statusReserva->rules, $this->statusReserva->msg);
+        $insert = $this->statusReserva->create($dataForm);
+
+        if($insert){
+            return redirect('/configuracoes/status-reservas');
+        }else{
+            return redirect()->back();
+        }
     }
 
 
@@ -40,13 +54,27 @@ class StatusReservaController extends Controller{
 
 
     public function edit($id){
-
+        $status = $this->statusReserva->find($id);
+        return view('painel.status-reserva.edit', compact('status'));
     }
 
 
 
     public function update(Request $request, $id){
+        $dataForm = $request->all();
+        $status = $this->statusReserva->find($id);
 
+        if(!isset($dataForm['descricao']) || $dataForm['descricao'] == ''){
+            $dataForm['descricao'] = 'Não há descrição';
+        }
+        $this->validate($request, $this->statusReserva->rules, $this->statusReserva->msg);
+        $update = $status->update($dataForm);
+
+        if($update){
+          return redirect('/configuracoes/status-reservas');
+        }else{
+          return redirect()->back();
+        }
     }
 
 
