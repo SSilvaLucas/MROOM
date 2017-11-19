@@ -79,6 +79,14 @@ class TipoAmbienteController extends Controller{
 
 
     public function destroy($id){
-        //
+        $tipo = $this->tipoAmbiente->find($id);
+
+        $delete = $tipo->delete();
+
+        if($delete){
+          return redirect()->route('tipos-ambientes.index');
+        }else{
+          return redirect()->route('tipos-ambientes.edit', $id)->with(['errors' => 'Falha ao deletar']);
+        }
     }
 }
