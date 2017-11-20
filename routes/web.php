@@ -16,4 +16,6 @@ Route::group(['namespace' => 'Painel'], function(){
     Route::resource('/configuracoes/horarios', 'HorarioController');
 
     Route::resource('/configuracoes/setores', 'SetorController');
+
+    Route::resource('/configuracoes/ddds', 'DddController');
 });

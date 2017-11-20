@@ -27,10 +27,6 @@ class HorarioController extends Controller{
     public function store(Request $request){
         $dataForm = $request->all();
 
-        if(!isset($dataForm['descricao']) || $dataForm['descricao'] == ''){
-            $dataForm['descricao'] = 'Não há descrição';
-        }
-
         $this->validate($request, $this->horario->rules, $this->horario->msg);
         $insert = $this->horario->create($dataForm);
 
@@ -41,9 +37,13 @@ class HorarioController extends Controller{
         }
     }
 
+
+
     public function show($id){
 
     }
+
+
 
     public function edit($id){
         $horarios = $this->horario->find($id);
