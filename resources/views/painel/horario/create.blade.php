@@ -16,13 +16,8 @@
         {!! csrf_field() !!}
         <div class="form-horario">
           <div class="form-group">
-              <label for="horas">Horas</label>
-              <input name="horas" type="number" maxlength="2" class="form-control" placeholder="00" required value="{{old('horas')}}">
-          </div>
-          <p>:</p>
-          <div class="form-group">
-              <label for="minutos">Minutos</label>
-              <input name="minutos" type="number" maxlength="2" class="form-control" placeholder="00" required value="{{old('minutos')}}">
+              <label for="horario">Horário</label>
+              <input name="horario" type="time" maxlength="4" class="form-control" placeholder="00:00" required value="{{old('horario')}}">
           </div>
         </div>
         <div class="btns-cadastro">

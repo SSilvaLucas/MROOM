@@ -11,25 +11,25 @@
 @endif
 
 <div class="title-secao-h2">
-  <h2>Horários para reservas</h2>
-  <p>Esta seção corresponde aos horários disponíveis para realizar as reservas</p>
+  <h2>Países</h2>
+  <p>Esta seção corresponde aos países disponíveis para cadastro</p>
 </div>
-<h3 class="title-secao-h3">Lista de horários disponíveis no sistema:</h3>
+<h3 class="title-secao-h3">Lista dos países disponíveis no sistema:</h3>
 <div class="table-responsive">
     <table class="table table-bordered table-horario">
         <thead>
             <tr>
-                <th>Horários</th>
+                <th>Nome</th>
                 <th class="coluna-acoes">Ações</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($horarios as $horario)
+            @foreach($paises as $pais)
               <tr>
-                <td>{{$horario->horario}}</td>
+                <td>{{$pais->nome}}</td>
                 <td class="btn-acoes">
-                  <a class="btn btn-primary" href="{{route('horarios.edit', $horario->id)}}"><span class="glyphicon glyphicon-pencil"></span></a>
-                  {!! Form::open(['route' => ['horarios.destroy', $horario->id], 'method' => 'DELETE']) !!}
+                  <a class="btn btn-primary" href="{{route('paises.edit', $pais->id)}}"><span class="glyphicon glyphicon-pencil"></span></a>
+                  {!! Form::open(['route' => ['paises.destroy', $pais->id], 'method' => 'DELETE']) !!}
                     <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
                   {!! Form::close() !!}
                 </td>
@@ -38,7 +38,7 @@
         </tbody>
     </table>
 </div>
-  <a class="btn btn-success btn-cadastrar" href="{{route('horarios.create')}}">
-    <span class="glyphicon glyphicon-plus"></span> Cadastrar novo horário
+  <a class="btn btn-success btn-cadastrar" href="{{route('paises.create')}}">
+    <span class="glyphicon glyphicon-plus"></span> Cadastrar novo país
   </a>
 @endsection

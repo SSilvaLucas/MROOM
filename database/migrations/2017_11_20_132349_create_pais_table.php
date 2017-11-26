@@ -4,17 +4,19 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHorariosTable extends Migration{
+class CreatePaisTable extends Migration{
 
     public function up(){
-        Schema::create('horarios', function (Blueprint $table){
+        Schema::create('pais', function (Blueprint $table) {
             $table->increments('id');
-            $table->time('horario')->unique();
+            $table->string('nome', 50)->unique();
             $table->timestamps();
         });
     }
 
+
+
     public function down(){
-        Schema::dropIfExists('horarios');
+        Schema::dropIfExists('pais');
     }
 }

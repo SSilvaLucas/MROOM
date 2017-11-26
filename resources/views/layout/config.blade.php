@@ -23,7 +23,7 @@
           <li role="separator" class="divider"></li>
           <li><a href="#">Estados</a></li>
           <li role="separator" class="divider"></li>
-          <li><a href="#">Países</a></li>
+          <li><a href="{{route('paises.index')}}">Países</a></li>
         </ul>
       </li>
       <li role="presentation" class="dropdown">

@@ -29,12 +29,7 @@
     justify-content: center;
 }
   .form-horario input{
-      max-width: 5em;
-  }
-  .form-horario p{
-      padding: .5em;
-      margin-bottom: 1.1em;
-      align-self: flex-end;
+      max-width: 10em;
   }
 .form-ddd{
     max-width: 5em;
