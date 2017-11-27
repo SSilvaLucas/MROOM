@@ -5,7 +5,7 @@ namespace App\Models\Painel;
 use Illuminate\Database\Eloquent\Model;
 
 class Ddd extends Model{
-    protected $fillable = ['id','ddd'];
+    protected $fillable = ['ddd'];
     // protected $guarded = [];
 
     public $rules = [

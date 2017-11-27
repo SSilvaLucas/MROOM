@@ -5,7 +5,7 @@ namespace App\Models\Painel;
 use Illuminate\Database\Eloquent\Model;
 
 class Pais extends Model{
-    protected $fillable = ['id', 'nome'];
+    protected $fillable = ['nome'];
     // protected $guarded = [];
 
     public $rules = [

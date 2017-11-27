@@ -37,8 +37,6 @@ class HorarioController extends Controller{
         }
     }
 
-
-
     public function show($id){
 
     }

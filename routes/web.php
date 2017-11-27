@@ -20,4 +20,7 @@ Route::group(['namespace' => 'Painel'], function(){
     Route::resource('/configuracoes/ddds', 'DddController');
 
     Route::resource('/configuracoes/paises', 'PaisController');
+
+    Route::resource('/configuracoes/estados', 'EstadoController');
+
 });

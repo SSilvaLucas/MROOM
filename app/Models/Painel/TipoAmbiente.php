@@ -5,7 +5,7 @@ namespace App\Models\Painel;
 use Illuminate\Database\Eloquent\Model;
 
 class TipoAmbiente extends Model{
-    protected $fillable = ['id', 'nome', 'descricao'];
+    protected $fillable = ['nome', 'descricao'];
     // protected $guarded = [];
 
     public $rules = [

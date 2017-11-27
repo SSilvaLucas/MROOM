@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Validation\Rule;
 
 class TipoEquipamento extends Model{
-    protected $fillable = ['id', 'nome', 'descricao'];
+    protected $fillable = ['nome', 'descricao'];
     // protected $guarded = [];
 
     public $rules = [
