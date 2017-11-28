@@ -7,7 +7,6 @@ Route::resource('/equipamentos','EquipamentosController');
 
 Route::group(['namespace' => 'Painel'], function(){
     Route::resource('/configuracoes/tipos-equipamentos', 'TipoEquipamentoController');
-    Route::post('/configuracoes/tipos-equipamentos/store', 'TipoEquipamentoController@store');
 
     Route::resource('/configuracoes/tipos-ambientes', 'TipoAmbienteController');
 
@@ -24,5 +23,9 @@ Route::group(['namespace' => 'Painel'], function(){
     Route::resource('/configuracoes/estados', 'EstadoController');
 
     Route::resource('/configuracoes/cidades', 'CidadeController');
+
+    Route::get('configuracoes', function () {
+        return view('/painel/index');
+    });
 
 });

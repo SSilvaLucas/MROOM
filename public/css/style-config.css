@@ -55,9 +55,22 @@
     max-width: 5em;
     margin-left: 1em;
 }
+.img-configuracoes{
+    margin-top: 3em;
+    margin-bottom: 3em;
+    width: 10em;
+}
+.index-configuracoes p{
+    text-align: center;
+    margin: 2em auto 1em auto;
+    max-width: 40em;
+}
 .legend{
     text-align: center;
     font-size: 1.2em;
+}
+.obs-danger{
+    color: red;
 }
 .table-horario{
     max-width: 20em;

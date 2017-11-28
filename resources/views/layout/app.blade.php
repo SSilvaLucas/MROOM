@@ -38,7 +38,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lucas <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#"><span class="glyphicon glyphicon-user"></span>  Minha Conta</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-cog"></span>  Configurações do Sitema</a></li>
+                                <li><a href="/configuracoes"><span class="glyphicon glyphicon-cog"></span>  Configurações do Sitema</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>  Sair</a></li>
                             </ul>

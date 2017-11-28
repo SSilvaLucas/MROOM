@@ -3,7 +3,7 @@
 @section('secao-config')
   <h3 class="title-secao-h3">Formulário para cadastrar novo tipo de equipamento:</h3>
   <div class="form-config">
-    <form class="form" method="post" action="{{url("/configuracoes/tipos-equipamentos/store")}}">
+    <form class="form" method="post" action="{{route('tipos-equipamentos.store')}}">
       <fieldset>
         <legend class="legend">Novo Tipo de Equipamento</legend>
         @if(isset($errors) && count($errors) > 0)
