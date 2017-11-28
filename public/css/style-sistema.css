@@ -10,10 +10,27 @@ body{
     font-size: 1.8em;
 }
 
+.navbar-brand img{
+    max-width: 4em;
+    margin-left: 1em;
+}
+
+.navbar{
+    /*height: 6em;*/
+    /*background: #0875bc;*/
+}
+  .navbar .container-fluid{
+
+  }
+
 
 @media (min-width: 768px){
   body{
       font-size: 1.6em;
+  }
+  .navbar-brand img{
+      max-width: 6em;
+      margin-left: 1em;
   }
   .title-secao-h1{
     margin-top: 1.5em;

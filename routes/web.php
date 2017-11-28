@@ -23,4 +23,6 @@ Route::group(['namespace' => 'Painel'], function(){
 
     Route::resource('/configuracoes/estados', 'EstadoController');
 
+    Route::resource('/configuracoes/cidades', 'CidadeController');
+
 });

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Painel;
 
-use App\Painel\Estado;
+use App\Models\Painel\Estado;
+use App\Models\Painel\Pais;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Painel\Estado;
 
 class EstadoController extends Controller{
 
@@ -18,13 +18,15 @@ class EstadoController extends Controller{
 
     public function index(Estado $estado){
         $estados = $estado->all();
-        return view('painel.estados.index', compact('estados'));
+
+        return view('painel.estado.index', compact('estados'));
     }
 
 
-    public function create(Estado $estado){
+    public function create(Estado $estado, Pais $pais){
         $estados = $estado->all();
-        return view('painel.estado.create', compact('estados'));
+        $paises  = $pais->all();
+        return view('painel.estado.create', compact('estados', 'paises'));
     }
 
 
@@ -46,9 +48,10 @@ class EstadoController extends Controller{
 
     }
 
-    public function edit(Estado $estado){
+    public function edit($id, Pais $pais){
         $estado = $this->estado->find($id);
-        return view('painel.estado.edit', compact('estado'));
+        $paises  = $pais->all();
+        return view('painel.estado.edit', compact('estado', 'paises'));
     }
 
     public function update(Request $request, $id){
@@ -65,7 +68,7 @@ class EstadoController extends Controller{
         }
     }
 
-    public function destroy(Estado $estado){
+    public function destroy($id){
         $estado = $this->estado->find($id);
 
         $delete = $estado->delete();

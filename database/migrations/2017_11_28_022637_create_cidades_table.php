@@ -4,24 +4,23 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEstadosTable extends Migration{
+class CreateCidadesTable extends Migration{
 
     public function up(){
-        Schema::create('estados', function (Blueprint $table) {
+        Schema::create('cidades', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome', 100)->unique();
-            $table->string('sigla', 3)->unique();
-            $table->integer('pais_id')->unsigned();
+            $table->integer('estado_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('pais_id')
+            $table->foreign('estado_id')
                   ->references('id')
-                  ->on('pais')
+                  ->on('estados')
                   ->onDelete('cascade');
         });
     }
 
     public function down(){
-        Schema::dropIfExists('estados');
+        Schema::dropIfExists('cidades');
     }
 }

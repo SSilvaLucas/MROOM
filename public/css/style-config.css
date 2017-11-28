@@ -42,6 +42,19 @@
     max-width: 100%;
     margin: 0 auto;
   }
+.form-estado{
+   display: flex;
+   justify-content: center;
+}
+.form-select{
+  max-width: 18em;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+.form-sigla{
+    max-width: 5em;
+    margin-left: 1em;
+}
 .legend{
     text-align: center;
     font-size: 1.2em;

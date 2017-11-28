@@ -19,9 +19,9 @@
           <li role="separator" class="divider"></li>
           <li><a href="{{route('ddds.index')}}">DDD Telefones</a></li>
           <li role="separator" class="divider"></li>
-          <li><a href="#">Cidades</a></li>
+          <li><a href="{{route('cidades.index')}}">Cidades</a></li>
           <li role="separator" class="divider"></li>
-          <li><a href="#">Estados</a></li>
+          <li><a href="{{route('estados.index')}}">Estados</a></li>
           <li role="separator" class="divider"></li>
           <li><a href="{{route('paises.index')}}">Países</a></li>
         </ul>

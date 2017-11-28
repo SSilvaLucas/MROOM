@@ -22,7 +22,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="/historico">
-                        <img alt="Brand MROOM" src="../../public/img/Castrolanda-MROOM.png">
+                        <img alt="Brand MROOM" src="{{url('imgs/Castrolanda-MROOM.png')}}">
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
