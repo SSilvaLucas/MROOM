@@ -1,33 +1,173 @@
 body{
     font-size: 1.2em;
 }
+
+.abre-menu, .logo-mroom{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  .abre-menu p{
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-left: .4em;
+      margin-bottom: 0;
+  }
+.barra-nav-mobile{
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 70%;
+    z-index: 2;
+    max-width: 350px;
+    background: #fff;
+    box-shadow: 0em 0.01em 0.5em #3f4652;
+    left: -80%;
+    transition: left 0.5s ease-out;
+}
+.barra-cabecalho{
+    display: flex;
+    justify-content: space-around;
+    background: #3B5E7F;
+    width: 100%;
+    height: 6em;
+    box-shadow: 0em 0.03em 0.3em #666;
+}
+.barra-nav-desktop{
+    display: none;
+    position: relative;
+}
+.btn-abre-menu{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-left: 2em;
+    padding:.5em .8em;
+    border: .125em solid #fff;
+    border-radius: .5em;
+}
+.cabecalho-menu-mobile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #3B5E7F;
+    height: 6em;
+    box-shadow: 0em 0.03em 0.3em #666;
+    margin-bottom: 2em;
+}
+    .cabecalho-menu-mobile h1{
+        width: 100%;
+        text-align: center;
+        margin-top: 1em;
+        margin-left: 1em;
+        text-transform: uppercase;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #fff;;
+    }
+.fecha-menu, .abre-menu{
+    background: none;
+    border: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    padding: 0;
+}
+    .fecha-menu span{
+        color: #fff;
+        margin-bottom: 1em;
+        margin-right: 1em;
+    }
+.logo-mroom img{
+      height: 70%;
+}
 .main-body{
     padding-bottom: 15em;
 }
+.menu-ativo .barra-nav-mobile{
+    left: 0;
+}
+.menu-ativo:after{
+    content: "";
+    display: block;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.3);
+}
+.menu-principal-mobile{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+    .menu-principal-mobile a{
+        font-size: 1.3em;
+    }
+    .menu-principal-mobile li{
+        margin-bottom: 2em;
+    }
 .title-secao-h1{
     text-align: center;
     font-weight: bold;
     font-size: 1.8em;
 }
-
-.navbar-brand img{
-    max-width: 4em;
-    margin-left: 1em;
-}
-
-.navbar{
-    /*height: 6em;*/
-    /*background: #0875bc;*/
-}
-  .navbar .container-fluid{
-
-  }
-
+.menu-principal{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0;
+        padding-left: 0;
+    }
+   .menu-principal li{
+        display: inline-block;
+        margin: 0em 3em 0em 0em;
+    }
+    .menu-principal a{
+		    text-decoration: none;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #fff;
+        transition: color 0.5s;
+    }
+    .menu-principal a:hover{
+        color: #999;
+        background: #3B5E7F;
+    }
 
 @media (min-width: 768px){
   body{
       font-size: 1.6em;
   }
+  .abre-menu, .barra-nav-mobile{
+      display: none;
+      width: 0;
+  }
+  .barra-cabecalho{
+      justify-content: center;
+  }
+  .barra-nav-desktop{
+      display: flex;
+      align-items: center;
+      margin-left: 8em;
+  }
+  .dropdown{
+      margin-left: 6em;
+  }
+  #dropdown-nav{
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #fff;
+      transition: color 0.5s;
+  }
+  #dropdown-nav:hover{
+      color: #999;
+      background: #3B5E7F;
+  }
+
   .navbar-brand img{
       max-width: 6em;
       margin-left: 1em;

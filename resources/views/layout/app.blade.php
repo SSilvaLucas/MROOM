@@ -12,41 +12,81 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/historico">
-                        <img alt="Brand MROOM" src="{{url('imgs/Castrolanda-MROOM.png')}}">
+        <nav class="barra-nav-mobile">
+            <header class="cabecalho-menu-mobile">
+                <h1>MROOM</h1>
+                <button class="fecha-menu">
+                    <span class="glyphicon glyphicon-remove-sign"></span>
+                </button>
+            </header>
+            <ul class="menu-principal-mobile">
+                <li>
+                    <a class="scroll-suave" href="#link-carousel">
+                      <span class="glyphicon glyphicon-time"></span> Reservas
                     </a>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/historico">Reservas <span class="sr-only">(current)</span></a></li>
-                        <li><a href="/ambientes">Ambientes</a></li>
-                        <li><a href="/equipamentos">Equipamentos</a></li>
-                        <li><a href="#">Manutenções</a></li>
-                        <li><a href="/usuarios">Usuários</a></li>
+                </li>
+                <li>
+                    <a class="scroll-suave" href="#link-sobre">
+                      <span class="glyphicon glyphicon-map-marker"></span> Ambientes
+                    </a>
+                </li>
+                <li>
+                    <a class="scroll-suave" href="#link-atividade">
+                      <span class="glyphicon glyphicon-facetime-video"></span> Equipamentos
+                    </a>
+                </li>
+                <li>
+                    <a class="scroll-suave" href="#link-programacao">
+                      <span class="glyphicon glyphicon-wrench"></span> Manutenções
+                    </a>
+                </li>
+                <li>
+                    <a class="scroll-suave" href="#link-organizacao">
+                      <span class="glyphicon glyphicon-stats"></span> Usuários
+                    </a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lucas <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>  Minha Conta</a></li>
+                        <li><a href="/configuracoes"><span class="glyphicon glyphicon-cog"></span>  Configurações do Sitema</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>  Sair</a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lucas <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#"><span class="glyphicon glyphicon-user"></span>  Minha Conta</a></li>
-                                <li><a href="/configuracoes"><span class="glyphicon glyphicon-cog"></span>  Configurações do Sitema</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>  Sair</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                </li>
+            </ul>
         </nav>
+        <div class="barra-cabecalho">
+          <div class="logo-mroom">
+              <img src="{{url('imgs/Castrolanda-MROOM.png')}}" alt="Brand MROOM">
+          </div>
+          <button class="abre-menu">
+              <div class="btn-abre-menu">
+                <span class="glyphicon glyphicon-menu-hamburger"></span>
+                <p>menu</p>
+              </div>
+          </button>
+          <nav class="barra-nav-desktop">
+              <ul class="menu-principal">
+                <li><a href="/historico">Reservas <span class="sr-only">(current)</span></a></li>
+                <li><a href="/ambientes">Ambientes</a></li>
+                <li><a href="/equipamentos">Equipamentos</a></li>
+                <li><a href="#">Manutenções</a></li>
+                <li><a href="/usuarios">Usuários</a></li>
+              </ul>
+              <div class="dropdown navbar-right">
+                  <a id="dropdown-nav" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lucas <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#"><span class="glyphicon glyphicon-user"></span>  Minha Conta</a></li>
+                      <li><a href="/configuracoes"><span class="glyphicon glyphicon-cog"></span>  Configurações do Sitema</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>  Sair</a></li>
+                  </ul>
+              </div>
+          </nav>
+
+        </div>
     </header>
     <main class="container-fluid main-body">
 
@@ -55,6 +95,8 @@
     </main>
     {{Html::script('js/jquery-3.2.1.min.js')}}
     {{Html::script('js/bootstrap.min.js')}}
+    {{Html::script('js/banner-collepse.js')}}
+    {{Html::script('js/menu.js')}}
     @stack('scripts')
 </body>
 </html>
