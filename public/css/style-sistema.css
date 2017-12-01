@@ -78,6 +78,22 @@ body{
         margin-bottom: 1em;
         margin-right: 1em;
     }
+.iten-desktop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #eee;
+}
+  .iten-desktop .glyphicon{
+      font-size: 2em;
+      margin-top: .5em;
+      margin-bottom: .2em;
+      transition: color 0.5s;
+  }
+  .iten-desktop:hover{
+      color: #77BDFF;
+  }
 .logo-mroom img{
       height: 70%;
 }
@@ -120,22 +136,19 @@ body{
         align-items: center;
         margin-bottom: 0;
         padding-left: 0;
+        color: #fff;
     }
    .menu-principal li{
         display: inline-block;
         margin: 0em 3em 0em 0em;
     }
-    .menu-principal a{
+    .menu-principal p{
 		    text-decoration: none;
-        font-size: 1.2em;
+        font-size: .8em;
         font-weight: bold;
-        color: #fff;
         transition: color 0.5s;
     }
-    .menu-principal a:hover{
-        color: #999;
-        background: #3B5E7F;
-    }
+
 
 @media (min-width: 768px){
   body{
@@ -164,8 +177,7 @@ body{
       transition: color 0.5s;
   }
   #dropdown-nav:hover{
-      color: #999;
-      background: #3B5E7F;
+      color: #77BDFF;
   }
 
   .navbar-brand img{

@@ -69,11 +69,36 @@
           </button>
           <nav class="barra-nav-desktop">
               <ul class="menu-principal">
-                <li><a href="/historico">Reservas <span class="sr-only">(current)</span></a></li>
-                <li><a href="/ambientes">Ambientes</a></li>
-                <li><a href="/equipamentos">Equipamentos</a></li>
-                <li><a href="#">Manutenções</a></li>
-                <li><a href="/usuarios">Usuários</a></li>
+                <li>
+                  <a style="text-decoration:none" class="iten-desktop" href="/historico">
+                    <span class="glyphicon glyphicon-time"></span>
+                    <p>Reservas</p>
+                  </a>
+                </li>
+                <li>
+                  <a style="text-decoration:none" class="iten-desktop" href="/ambientes">
+                    <span class="glyphicon glyphicon-map-marker"></span>
+                    <p>Ambientes</p>
+                  </a>
+                </li>
+                <li>
+                  <a style="text-decoration:none" class="iten-desktop" href="/equipamentos">
+                    <span class="glyphicon glyphicon-facetime-video"></span>
+                    <p>Equipamentos</p>
+                  </a>
+                </li>
+                <li>
+                  <a style="text-decoration:none" class="iten-desktop" href="#">
+                    <span class="glyphicon glyphicon-wrench"></span>
+                    <p>Manutenções</p>
+                  </a>
+                </li>
+                <li>
+                  <a style="text-decoration:none" class="iten-desktop" href="/usuarios">
+                    <span class="glyphicon glyphicon-stats"></span>
+                    <p>Usuários</p>
+                  </a>
+                </li>
               </ul>
               <div class="dropdown navbar-right">
                   <a id="dropdown-nav" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lucas <span class="caret"></span></a>
