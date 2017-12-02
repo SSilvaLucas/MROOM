@@ -20,7 +20,7 @@
           </div>
           <div class="form-group form-select">
             <label for="estados_id">Estado: </label>
-            <select name="estado_id" class="form-control" required>
+            <select name="estados_id" class="form-control" required>
               <option disabled selected> - Selecione - </option>
               @foreach($estados as $estado)
                 <option value="{{$estado->id}}">{{$estado->nome}}</option>

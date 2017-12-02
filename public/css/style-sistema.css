@@ -94,6 +94,9 @@ body{
   .iten-desktop:hover{
       color: #77BDFF;
   }
+.janela-login{
+    margin-top: 5em;
+}
 .logo-mroom img{
       height: 70%;
 }
@@ -125,11 +128,6 @@ body{
     .menu-principal-mobile li{
         margin-bottom: 2em;
     }
-.title-secao-h1{
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.8em;
-}
 .menu-principal{
         display: flex;
         justify-content: space-between;
@@ -148,6 +146,11 @@ body{
         font-weight: bold;
         transition: color 0.5s;
     }
+.title-secao-h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.8em;
+}
 
 
 @media (min-width: 768px){
@@ -179,7 +182,10 @@ body{
   #dropdown-nav:hover{
       color: #77BDFF;
   }
-
+  .linha-form{
+    display: flex;
+    justify-content: space-around;
+  }
   .navbar-brand img{
       max-width: 6em;
       margin-left: 1em;

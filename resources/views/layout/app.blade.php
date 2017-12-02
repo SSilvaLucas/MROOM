@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>MROOM - @yield('title')</title>
     {{Html::style('css/bootstrap.min.css')}}
     {{Html::style('css/bootstrap-thema.min.css')}}
@@ -20,28 +23,40 @@
                 </button>
             </header>
             <ul class="menu-principal-mobile">
+              @guest
                 <li>
-                    <a class="scroll-suave" href="#link-carousel">
+                  <a href="{{ route('login') }}">
+                    <span class="glyphicon glyphicon-log-in"></span> Login
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ route('register') }}">
+                    <span class="glyphicon glyphicon-save"></span> Registrar
+                  </a>
+                </li>
+              @else
+                <li>
+                    <a href="#link-carousel">
                       <span class="glyphicon glyphicon-time"></span> Reservas
                     </a>
                 </li>
                 <li>
-                    <a class="scroll-suave" href="#link-sobre">
+                    <a href="#link-sobre">
                       <span class="glyphicon glyphicon-map-marker"></span> Ambientes
                     </a>
                 </li>
                 <li>
-                    <a class="scroll-suave" href="#link-atividade">
+                    <a href="#link-atividade">
                       <span class="glyphicon glyphicon-facetime-video"></span> Equipamentos
                     </a>
                 </li>
                 <li>
-                    <a class="scroll-suave" href="#link-programacao">
+                    <a href="#link-programacao">
                       <span class="glyphicon glyphicon-wrench"></span> Manutenções
                     </a>
                 </li>
                 <li>
-                    <a class="scroll-suave" href="#link-organizacao">
+                    <a href="#link-organizacao">
                       <span class="glyphicon glyphicon-stats"></span> Usuários
                     </a>
                 </li>
@@ -52,9 +67,19 @@
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span>  Minha Conta</a></li>
                         <li><a href="/configuracoes"><span class="glyphicon glyphicon-cog"></span>  Configurações do Sitema</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>  Sair</a></li>
+                        <li>
+                          <a href="{{ route('logout') }}"
+                              onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
+                            <span class="glyphicon glyphicon-log-out"></span>  Sair
+                          </a>
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                              {{ csrf_field() }}
+                          </form>
+                        </li>
                     </ul>
                 </li>
+              @endguest
             </ul>
         </nav>
         <div class="barra-cabecalho">
@@ -68,6 +93,22 @@
               </div>
           </button>
           <nav class="barra-nav-desktop">
+            @guest
+              <ul class="menu-principal">
+                <li>
+                  <a style="text-decoration:none" class="iten-desktop" href="{{ route('login') }}">
+                    <span class="glyphicon glyphicon-log-in"></span>
+                    <p>Login</p>
+                  </a>
+                </li>
+                <li>
+                  <a style="text-decoration:none" class="iten-desktop" href="{{ route('register') }}">
+                    <span class="glyphicon glyphicon-save"></span>
+                    <p>Registrar</p>
+                  </a>
+                </li>
+              </ul>
+            @else
               <ul class="menu-principal">
                 <li>
                   <a style="text-decoration:none" class="iten-desktop" href="/historico">
@@ -101,14 +142,26 @@
                 </li>
               </ul>
               <div class="dropdown navbar-right">
-                  <a id="dropdown-nav" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lucas <span class="caret"></span></a>
+                  <a id="dropdown-nav" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    {{ Auth::user()->nome }} <span class="caret"></span>
+                  </a>
                   <ul class="dropdown-menu">
                       <li><a href="#"><span class="glyphicon glyphicon-user"></span>  Minha Conta</a></li>
                       <li><a href="/configuracoes"><span class="glyphicon glyphicon-cog"></span>  Configurações do Sitema</a></li>
                       <li role="separator" class="divider"></li>
-                      <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>  Sair</a></li>
+                      <li>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                                   document.getElementById('logout-form').submit();">
+                           <span class="glyphicon glyphicon-log-out"></span>  Sair
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                      </li>
                   </ul>
               </div>
+            @endguest
           </nav>
 
         </div>
