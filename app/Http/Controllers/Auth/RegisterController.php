@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Models\Painel\Ddd;
+use App\Models\Painel\Cidade;
+use App\Models\Painel\Setore;
 
 class RegisterController extends Controller{
 
@@ -32,12 +34,14 @@ class RegisterController extends Controller{
         ]);
     }
 
-    protected function create(array $data, Ddd $ddd){
+    public function index(Ddd $ddd, Cidade $cidade, Setore $setor){
         $ddds = $ddd->all();
-        return view('auth.register', compact('ddds'));
+        $cidades = $cidade->all();
+        $setores = $setor->all();
+        return view('auth.register', compact('ddds', 'cidades', 'setores'));
     }
 
-    protected function store(array $data){
+    protected function create(array $data){
       return User::create([
           'nome'       => $data['nome'],
           'sobrenome'  => $data['sobrenome'],

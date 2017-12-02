@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="{{url('imgs/favicon.png')}}">
     <title>MROOM - @yield('title')</title>
     {{Html::style('css/bootstrap.min.css')}}
     {{Html::style('css/bootstrap-thema.min.css')}}
@@ -30,7 +31,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="{{ route('register') }}">
+                  <a href="{{ route('registrar.index') }}">
                     <span class="glyphicon glyphicon-save"></span> Registrar
                   </a>
                 </li>
@@ -102,7 +103,7 @@
                   </a>
                 </li>
                 <li>
-                  <a style="text-decoration:none" class="iten-desktop" href="{{ route('register') }}">
+                  <a style="text-decoration:none" class="iten-desktop" href="{{ route('registrar.index') }}">
                     <span class="glyphicon glyphicon-save"></span>
                     <p>Registrar</p>
                   </a>

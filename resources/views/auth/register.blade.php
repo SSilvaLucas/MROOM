@@ -38,7 +38,12 @@
                           </div>
                           <div class="form-group col-md-2">
                             <label for="ddds_id">DDD: </label>
-                            <input id="ddds_id" name="telefone" type="number" maxlength="10" class="form-control" placeholder="ex: 99999-9999" required value="{{old('telefone')}}">
+                            <select id="ddds_id" name="ddds_id" class="form-control" required>
+                              <option disabled selected>ddd</option>
+                              @foreach($ddds as $ddd)
+                                <option value="{{$ddd->id}}">{{$ddd->ddd}}</option>
+                              @endforeach
+                            </select>
 
                           </div>
                           <div class="form-group col-md-4">
@@ -49,12 +54,22 @@
 
                         <div class="linha-form">
                           <div class="form-group col-md-6">
-                            <label for="setor">Setor Pertencente: </label>
-                            <input id="setor" name="setor" type="text" maxlength="20" class="form-control" placeholder="Seu primeiro nome" required value="{{old('nome')}}">
+                            <label for="setores_id">Setor Pertencente: </label>
+                            <select id="setores_id" name="setores_id" class="form-control" required>
+                              <option disabled selected> - Selecione - </option>
+                              @foreach($setores as $setor)
+                                <option value="{{$setor->id}}">{{$setor->nome}}</option>
+                              @endforeach
+                            </select>
                           </div>
                           <div class="form-group col-md-6">
                             <label for="cidades_id">Cidade: </label>
-                            <input id="cidades_id" name="cidades_id" type="text" maxlength="70" class="form-control" placeholder="Seu sobrenome" required value="{{old('sobrenome')}}">
+                            <select id="cidades_id" name="cidades_id" class="form-control" required>
+                              <option disabled selected> - Selecione - </option>
+                              @foreach($cidades as $cidade)
+                                <option value="{{$cidade->id}}">{{$cidade->nome}}</option>
+                              @endforeach
+                            </select>
                           </div>
                         </div>
 
