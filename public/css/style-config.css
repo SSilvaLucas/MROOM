@@ -8,22 +8,6 @@
     margin: 0 auto;
     margin-top: 2em;
 }
-.btns-cadastro{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-}
-.btn-form{
-    margin-top: 1em;
-    width: 7em;
-}
-.form-config{
-    max-width: 40em;
-    padding: 2em;
-    border: 1px solid #ccc;
-    border-radius: .3em;
-    margin: 0 auto 10em auto;
-}
 .form-horario{
     display: flex;
     justify-content: center;
@@ -42,19 +26,12 @@
     max-width: 100%;
     margin: 0 auto;
   }
-.form-estado{
-   display: flex;
-   justify-content: center;
-}
 .form-select{
   max-width: 18em;
   margin: 0 auto;
   margin-bottom: 1em;
 }
-.form-sigla{
-    max-width: 5em;
-    margin-left: 1em;
-}
+
 .img-configuracoes{
     margin-top: 3em;
     margin-bottom: 3em;
@@ -64,10 +41,6 @@
     text-align: center;
     margin: 2em auto 1em auto;
     max-width: 40em;
-}
-.legend{
-    text-align: center;
-    font-size: 1.2em;
 }
 .obs-danger{
     color: red;
@@ -94,11 +67,7 @@
 .title-secao-h2 h2{
     font-size: 2em;
 }
-.title-secao-h3{
-    font-size: 1em;
-    text-align: center;
-    margin-bottom: 1em;
-}
+
 
 
 @media (min-width: 768px){
@@ -126,9 +95,5 @@
   }
   .title-secao-h2 h2{
       font-size: 2em;
-  }
-  .title-secao-h3{
-      font-size: 1.3em;
-      margin-bottom: 1em;
   }
 }

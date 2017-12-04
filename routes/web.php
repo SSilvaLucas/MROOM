@@ -33,7 +33,11 @@ Route::group(['namespace' => 'Painel'], function(){
 Auth::routes();
 
 Route::group(['namespace' => 'Auth'], function(){
-  Route::resource('/registrar', 'RegisterController');
+    Route::resource('/registrar', 'RegisterController');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['namespace' => 'Dashboard'], function(){
+    Route::resource('/ambientes', 'AmbienteController');
+});

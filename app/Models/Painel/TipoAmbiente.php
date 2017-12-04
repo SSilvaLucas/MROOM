@@ -3,6 +3,7 @@
 namespace App\Models\Painel;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Painel\TipoAmbiente;
 
 class TipoAmbiente extends Model{
     protected $fillable = ['nome', 'descricao'];
@@ -22,4 +23,8 @@ class TipoAmbiente extends Model{
         'descricao.min' => 'O campo descrição deve ter no mínimo 5 caracteres.',
         'descricao.max' => 'O campo descrição deve ter no máximo 200 caracteres.',
     ];
+
+    public function tiposAmbiente(){
+        return $this->hasMany(TipoAmbiente::class);
+    }
 }

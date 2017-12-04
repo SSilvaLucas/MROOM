@@ -47,6 +47,15 @@ body{
     border: .125em solid #fff;
     border-radius: .5em;
 }
+.btns-cadastro{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.btn-form{
+    margin-top: 1em;
+    width: 7em;
+}
 .cabecalho-menu-mobile{
     display: flex;
     align-items: center;
@@ -78,6 +87,30 @@ body{
         margin-bottom: 1em;
         margin-right: 1em;
     }
+.form-config{
+    max-width: 40em;
+    padding: 2em;
+    border: 1px solid #ccc;
+    border-radius: .3em;
+    margin: 0 auto 10em auto;
+}
+.form-2-linha{
+   display: flex;
+   justify-content: center;
+}
+.form-2-linha-control{
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+.form-2-caracter{
+    width: 100%;
+}
+.img-home{
+    margin-top: 3em;
+    margin-bottom: 3em;
+    width: 20em;
+}
 .iten-desktop{
     display: flex;
     align-items: center;
@@ -94,8 +127,15 @@ body{
   .iten-desktop:hover{
       color: #77BDFF;
   }
+.invisivel{
+    display: none;
+}
 .janela-login{
     margin-top: 5em;
+}
+.legend{
+    text-align: center;
+    font-size: 1.2em;
 }
 .logo-mroom img{
       height: 70%;
@@ -151,6 +191,11 @@ body{
     font-weight: bold;
     font-size: 1.8em;
 }
+.title-secao-h3{
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 1em;
+}
 
 
 @media (min-width: 768px){
@@ -182,6 +227,10 @@ body{
   #dropdown-nav:hover{
       color: #77BDFF;
   }
+  .form-2-caracter{
+      max-width: 7.5em;
+      margin-left: 1em;
+  }
   .linha-form{
     display: flex;
     justify-content: space-around;
@@ -194,5 +243,9 @@ body{
     margin-top: 1.5em;
     margin-bottom: 1em;
     font-size: 2.5em;
+  }
+  .title-secao-h3{
+      font-size: 1.3em;
+      margin-bottom: 1em;
   }
 }

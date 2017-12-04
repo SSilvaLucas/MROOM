@@ -1,23 +1,16 @@
 @extends('layout.app')
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+@section('title','Home')
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+@push('css')
+  {{Html::style('css/style-config.css')}}
+@endpush
 
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@section('conteudo')
+  <div class="title-secao-h2 index-configuracoes">
+    <h2>Bem Vindo, {{ Auth::user()->nome }} {{ Auth::user()->sobrenome }}.</h2>
+    <p>Este é o sistema de reserva de ambientes da Castrolanda, aqui você pode solicitar reservas, manutenções e acompanhar a disponibilidades dos espaços da cooperativa.</p>
+    <img class="img-home" src="{{url('imgs/Castrolanda-MROOM-color.png')}}" alt="simbolo de configurações">
+    <p>OBS: Utilize a barra de menu no topo para navegar sobre as seções desejadas.<p>
+  </div>
 @endsection

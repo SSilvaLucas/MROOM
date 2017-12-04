@@ -14,12 +14,12 @@
         </div>
         @endif
         {!! csrf_field() !!}
-        <div class="form-estado">
+        <div class="form-2-linha">
           <div class="form-group">
               <label for="nome">Nome do Estado: </label>
               <input name="nome" type="text" maxlength="100" class="form-control" placeholder="Nome do estado" required value="{{old('nome')}}">
           </div>
-          <div class="form-group form-sigla">
+          <div class="form-group form-2-caracter">
               <label for="sigla">Sigla: </label>
               <input name="sigla" type="text" maxlength="3" class="form-control" placeholder="AA" required value="{{old('sigla')}}">
           </div>

@@ -15,10 +15,10 @@ class Cidade extends Model{
   ];
 
   public $msg = [
-      'nome.required'    => 'O campo nome precisa ser preenchido!',
-      'nome.unique'      => 'Este nome de estado já está cadastrado no sistema!',
-      'nome.min'         => 'O campo nome deve ter no mínimo 4 caracteres.',
-      'nome.max'         => 'O campo nome deve ter no máximo 100 caracteres.',
+        'nome.required'    => 'O campo nome precisa ser preenchido!',
+      'nome.unique'        => 'Este nome de estado já está cadastrado no sistema!',
+      'nome.min'           => 'O campo nome deve ter no mínimo 4 caracteres.',
+      'nome.max'           => 'O campo nome deve ter no máximo 100 caracteres.',
       'estado_id.required' => 'O campo País deve ser selecionado',
   ];
 
