@@ -40,4 +40,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['namespace' => 'Dashboard'], function(){
     Route::resource('/ambientes', 'AmbienteController');
+
+    Route::resource('/equipamentos', 'EquipamentoController');
 });

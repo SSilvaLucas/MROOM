@@ -42,12 +42,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#link-sobre">
+                    <a href="/ambientes">
                       <span class="glyphicon glyphicon-map-marker"></span> Ambientes
                     </a>
                 </li>
                 <li>
-                    <a href="#link-atividade">
+                    <a href="/equipamentos">
                       <span class="glyphicon glyphicon-facetime-video"></span> Equipamentos
                     </a>
                 </li>

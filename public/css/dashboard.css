@@ -20,6 +20,12 @@
     margin: 0 auto;
     margin-top: 2em;
 }
+.btn-cadastrar-equipamento{
+  display: block;
+  width: 18em;
+  margin: 0 auto;
+  margin-top: 2em;
+}
 .btn-coluna{
   width: 1em;
 }
@@ -27,6 +33,9 @@
   display: block;
   width: 20em;
   margin: 0 auto;
+}
+.disponivel{
+  color: green;
 }
 .img-collapse{
   width: 20em;
@@ -36,6 +45,9 @@
 .icon-filtro{
   margin-right: 1em;
   font-size: 1.2em;
+}
+.indisponivel{
+  color: red;
 }
 .info-collapse{
   margin-bottom: 2em;
@@ -69,6 +81,9 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-top: 2em;
+}
+.solicitada{
+  color: orange;
 }
 .titulo-collapse{
   text-align: center;

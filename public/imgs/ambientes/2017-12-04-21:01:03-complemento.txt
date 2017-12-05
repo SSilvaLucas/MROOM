@@ -1,0 +1,6 @@
+<select name="ddds_id" class="form-control" required>
+                              <option disabled selected> - Selecione - </option>
+                              @foreach($ddds as $ddd)
+                                <option value="{{$ddd->id}}">{{$ddd->ddd}}</option>
+                              @endforeach
+                            </select> 

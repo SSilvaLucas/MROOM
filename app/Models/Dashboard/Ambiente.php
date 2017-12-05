@@ -11,9 +11,9 @@ class Ambiente extends Model{
     // protected $guarded = [];
 
     public $rules = [
-        'nome'                => 'required|unique:estados,nome,id|min:4|max:20',
+        'nome'                => 'required|unique:ambientes,nome|min:4|max:20',
         'capacidade'          => 'required',
-        'imagem'              => 'max:100',
+        'imagem'              => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         'descricao'           => 'required|min:4|max:200',
         'tipo_ambientes_id'   => 'required',
         'setores_id'          => 'required',
@@ -33,11 +33,11 @@ class Ambiente extends Model{
         'setores_id.required'        => 'O Setor em que o ambiente está vinculado deve ser selecionado',
     ];
 
-    public function tipoAmbiente(){
-        return $this->belongsTo(TipoAmbiente::class);
+    public function tipo_ambientes(){
+        return $this->belongsTo(TipoAmbiente::class, 'tipo_ambientes_id');
     }
 
     public function setor(){
-        return $this->belongsTo(Setore::class);
+        return $this->belongsTo(Setore::class, 'setores_id');
     }
 }

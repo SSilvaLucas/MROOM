@@ -1,19 +1,15 @@
 @extends('layout.app')
 
-@section('title','Cadastro de Ambientes')
+@section('title','Editar Ambiente')
 
 @push('css')
   {{Html::style('css/dashboard.css')}}
 @endpush
 
-@push('scripts')
-  {{Html::script('js/busca-ambiente.js')}}
-@endpush
-
 @section('conteudo')
 <div class="container secao-dashboard">
     <h1 class="title-secao-h1"><span class="glyphicon glyphicon-map-marker"></span> Ambientes</h1>
-    <h3 class="title-secao-h3">Formulário para cadastrar novo ambiente:</h3>
+    <h3 class="title-secao-h3">Formulário para editar ambiente:</h3>
     <div class="form-config">
       <form class="form" method="post" action="{{route('ambientes.update', $ambienteEd->id)}}" enctype="multipart/form-data">
         <fieldset>
