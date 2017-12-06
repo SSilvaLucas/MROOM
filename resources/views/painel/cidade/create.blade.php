@@ -19,8 +19,8 @@
               <input name="nome" type="text" maxlength="100" class="form-control" placeholder="Nome da cidade" required value="{{old('nome')}}">
           </div>
           <div class="form-group form-select">
-            <label for="estados_id">Estado: </label>
-            <select name="estados_id" class="form-control" required>
+            <label for="estado_id">Estado: </label>
+            <select name="estado_id" class="form-control" required>
               <option disabled selected> - Selecione - </option>
               @foreach($estados as $estado)
                 <option value="{{$estado->id}}">{{$estado->nome}}</option>

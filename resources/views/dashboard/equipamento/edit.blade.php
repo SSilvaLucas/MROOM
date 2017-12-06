@@ -12,7 +12,7 @@
     <h3 class="title-secao-h3">Formulário para editar equipamento:</h3>
     <div class="form-config">
       <form class="form" method="post" action="{{route('equipamentos.update', $equipamento->id)}}" enctype="multipart/form-data">
-        <legend class="legend">Novo Equipamento</legend>
+        <legend class="legend">Editar Equipamento</legend>
         @if(isset($errors) && count($errors) > 0)
         <div class="alert alert-danger">
           @foreach ($errors->all() as $error)

@@ -20,7 +20,7 @@
               <span class="icon-filtro glyphicon glyphicon-filter"></span>
               <input name="filtro" id="busca-iten" type="text" class="input-filtro form-control" placeholder="Buscar">
             </div>
-            <div class="radio-filtro">
+            <!-- <div class="radio-filtro">
               <label class="campo-formulario">
                   <input id="filtro-nome" type="radio" name="usado" value="true"> Nome
               </label>
@@ -30,7 +30,7 @@
               <label class="campo-formulario">
                   <input id="filtro-capacidade" type="radio" name="usado" value="true"> Capacidade
               </label>
-            </div>
+            </div> -->
         </div>
       </form>
       <div class="table-responsive">

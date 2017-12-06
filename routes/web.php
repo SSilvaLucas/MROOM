@@ -3,6 +3,7 @@
 Route::get('/', function () {
     return view('auth.login');
 });
+
 Route::resource('/equipamentos','EquipamentosController');
 
 Route::group(['namespace' => 'Painel'], function(){
@@ -42,4 +43,6 @@ Route::group(['namespace' => 'Dashboard'], function(){
     Route::resource('/ambientes', 'AmbienteController');
 
     Route::resource('/equipamentos', 'EquipamentoController');
+
+    Route::resource('/manutencoes', 'ManutencaoController');
 });

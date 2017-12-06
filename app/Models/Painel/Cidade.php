@@ -10,7 +10,7 @@ class Cidade extends Model{
   // protected $guarded = [];
 
   public $rules = [
-      'nome'      => 'required|unique:estados,nome,id|min:4|max:100',
+      'nome'      => 'required|unique:estados,nome|min:4|max:100',
       'estado_id'   => 'required',
   ];
 

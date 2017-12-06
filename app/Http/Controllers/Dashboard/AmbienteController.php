@@ -52,7 +52,11 @@ class AmbienteController extends Controller{
           $ambiente->setores_id        = $request->setores_id;
 
         }else{
-          $ambiente = $request->all();
+          $ambiente->nome              = $request->nome;
+          $ambiente->capacidade        = $request->capacidade;
+          $ambiente->descricao         = $request->descricao;
+          $ambiente->tipo_ambientes_id = $request->tipo_ambientes_id;
+          $ambiente->setores_id        = $request->setores_id;
         }
         $this->validate($request, $this->ambiente->rules, $this->ambiente->msg);
         $insert = $ambiente->save();
