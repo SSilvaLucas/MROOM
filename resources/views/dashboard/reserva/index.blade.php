@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('title','Manutenções')
+@section('title','Reservas')
 
 @push('css')
   {{Html::style('css/dashboard.css')}}
@@ -13,12 +13,12 @@
 
 @section('conteudo')
   <div class="container secao-dashboard">
-      <h1 class="title-secao-h1"><span class="glyphicon glyphicon-wrench"></span> Manutenções</h1>
+      <h1 class="title-secao-h1"><span class="glyphicon glyphicon-calendar"></span> Reservas</h1>
       <form class="navbar-form navbar-left" role="search">
           <div class="secao-filtro">
             <div class="input-filtro">
               <span class="icon-filtro glyphicon glyphicon-filter"></span>
-              <input name="filtro" id="busca-iten" type="text" class="input-filtro form-control" placeholder="Buscar">
+              <input name="filtro" id="busca-iten" type="text" class="input-filtro form-control" placeholder="Buscar por data">
             </div>
             <!-- <div class="radio-filtro">
               <label class="campo-formulario">
@@ -37,41 +37,46 @@
         <table class="table table-hover table-responsive">
               <thead>
                   <tr>
-                      <th>Número da Manutenção</th>
-                      <th>Equipamento</th>
-                      <th>Data da Solicitação</th>
+                      <th>Número da reserva</th>
+                      <th>Data de Início</th>
+                      <th>Data de Fim</th>
+                      <th>Horário de Início</th>
+                      <th>Horário de Fim</th>
+                      <th>Ambiente</th>
                       <th>Status</th>
                       <th class="btn-coluna"></th>
                   </tr>
               </thead>
               <tbody>
-                  @foreach($manutencoes as $manutencao)
+                  @foreach($reservas as $reserva)
                     <tr class="iten">
-                        <td class="item-lista info-nome">{{$manutencao->id}}</td>
-                        <td class="">{{$manutencao->equipamento->numero_equipamento}}</td>
-                        <td>{{date('d / m / y', strtotime($manutencao->data_solicitacao))}}</td>
-                        <td class="status">{{$manutencao->status}}</td>
+                        <td>{{$reserva->id}}</td>
+                        <td class="item-lista info-nome">{{date('d/m/y', strtotime($reserva->data_inicio))}}</td>
+                        <td>{{date('d/m/y', strtotime($reserva->data_fim))}}</td>
+                        <td class="">{{$reserva->horarioInicio->horario}}</td>
+                        <td class="">{{$reserva->horarioFim->horario}}</td>
+                        <td class="">{{$reserva->ambiente->nome}}</td>
+                        <td class="status">{{$reserva->status}}</td>
                         <td class="item-lista btn-coluna">
-                          <button class="btn btn-default btn-lista" type="button" data-toggle="collapse" data-target="#{{$manutencao->id}}" aria-expanded="false" aria-controls="{{$manutencao->id}}">
+                          <button class="btn btn-default btn-lista" type="button" data-toggle="collapse" data-target="#{{$reserva->id}}" aria-expanded="false" aria-controls="{{$reserva->id}}">
                               <span class="glyphicon glyphicon-eye-open"></span>
                           </button>
                         </td>
                     </tr>
-                    <tr class="collapse" id="{{$manutencao->id}}">
-                      <td class="detalhes-lista" colspan="5">
+                    <tr class="collapse" id="{{$reserva->id}}">
+                      <td class="detalhes-lista" colspan="8">
                           <div class="well">
-                            <h3 class="titulo-collapse">Manutenção: {{$manutencao->id}}</h3>
+                            <h3 class="titulo-collapse">Reserva: {{$reserva->id}}</h3>
                             <div class="corpo-collapse">
                               <ul class="info-collapse">
-                                <li>Descrição do Problema: {{$manutencao->descricao_problema}}</li>
-                                <li>Solicitante: {{$manutencao->user->nome}}</li>
-                                <li>Descrição da Conclusão: {{$manutencao->descricao_conclusao}}</li>
-                                <li>Data da Conclusão: {{date('d / m / Y', strtotime($manutencao->data_conclusao))}}</li>
+                                <li>Descrição: {{$reserva->descricao}}</li>
+                                <li>Solicitante: {{$reserva->user->nome}} {{$reserva->user->sobrenome}}</li>
+                                <li>Data da solicitação: {{date('d / m / Y', strtotime($reserva->data_solicitacao))}}</li>
                               </ul>
                             </div>
                             <div class="btn-acoes">
-                              <a class="btn btn-primary" href="{{route('manutencoes.edit', $manutencao->id)}}"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
-                              {!! Form::open(['route' => ['manutencoes.destroy', $manutencao->id], 'method' => 'DELETE']) !!}
+                              <a class="btn btn-primary" href="{{route('reservas.edit', $reserva->id)}}"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
+                              {!! Form::open(['route' => ['reservas.destroy', $reserva->id], 'method' => 'DELETE']) !!}
                                 <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-trash"></span> Excluir</button>
                               {!! Form::close() !!}
                             </div>
@@ -82,8 +87,8 @@
               </tbody>
         </table>
       </div>
-      <a class="btn btn-success btn-cadastrar" href="{{route('manutencoes.create')}}">
-        <span class="glyphicon glyphicon-plus"></span> Solicitar manutenção
+      <a class="btn btn-success btn-cadastrar" href="{{route('reservas.create')}}">
+        <span class="glyphicon glyphicon-plus"></span> Solicitar reserva
       </a>
     </div>
 

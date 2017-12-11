@@ -45,4 +45,8 @@ Route::group(['namespace' => 'Dashboard'], function(){
     Route::resource('/equipamentos', 'EquipamentoController');
 
     Route::resource('/manutencoes', 'ManutencaoController');
+
+    Route::resource('/reservas', 'ReservaController');
+
+    Route::post('/reservas/solicita', 'ReservaController@solicita');
 });

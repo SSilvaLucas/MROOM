@@ -44,13 +44,6 @@ class ManutencaoController extends Controller{
             return redirect()->back();
         }
     }
-    public function concluir($id, Equipamento $equipamento){
-      
-    }
-
-    public function updateStatus(Request $request, $id){
-
-    }
 
 
     public function edit($id, Equipamento $equipamento){

@@ -65,7 +65,7 @@
                               <img class="img-collapse" src="{{$equipamento->imagem}}">
                               <ul class="info-collapse">
                                 <li>Ambiente Pertencente: {{$equipamento->ambiente->nome}}</li>
-                                <li>Data da última manutenção: {{$equipamento->ultima_manutencao}}</li>
+                                <li>Data da última manutenção: {{date(' d / m / Y', strtotime($equipamento->ultima_manutencao))}}</li>
                                 <li>Descrição: {{$equipamento->descricao}}</li>
                               </ul>
                             </div>

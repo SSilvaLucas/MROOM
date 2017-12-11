@@ -186,6 +186,14 @@ body{
         font-weight: bold;
         transition: color 0.5s;
     }
+.reservas-solicitadas{
+    max-width: 60em;
+    padding: 2em;
+    border: 1px solid #ccc;
+    border-radius: .3em;
+    margin: 0 auto 2em auto;
+    font-size: .8em;
+}
 .title-secao-h1{
     text-align: center;
     font-weight: bold;

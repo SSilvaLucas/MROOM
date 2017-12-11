@@ -37,8 +37,8 @@
                 </li>
               @else
                 <li>
-                    <a href="#link-carousel">
-                      <span class="glyphicon glyphicon-time"></span> Reservas
+                    <a href="/reservas">
+                      <span class="glyphicon glyphicon-calendar"></span> Reservas
                     </a>
                 </li>
                 <li>
@@ -112,8 +112,8 @@
             @else
               <ul class="menu-principal">
                 <li>
-                  <a style="text-decoration:none" class="iten-desktop" href="/historico">
-                    <span class="glyphicon glyphicon-time"></span>
+                  <a style="text-decoration:none" class="iten-desktop" href="/reservas">
+                    <span class="glyphicon glyphicon-calendar"></span>
                     <p>Reservas</p>
                   </a>
                 </li>

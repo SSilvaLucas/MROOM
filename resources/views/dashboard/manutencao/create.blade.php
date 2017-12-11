@@ -31,7 +31,7 @@
                 <select id="equipamento_id" name="equipamento_id" class="form-control" required>
                   <option disabled selected> - Selecione - </option>
                   @foreach($equipamentos as $equipamento)
-                    <option value="{{$equipamento->id}}">{{$equipamento->numero_equipamento}}</option>
+                    <option value="{{$equipamento->id}}">{{$equipamento->numero_equipamento}} - {{$equipamento->tipoEquipamento->nome}}</option>
                   @endforeach
                 </select>
             </div>
