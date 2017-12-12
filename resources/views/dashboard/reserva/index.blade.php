@@ -74,11 +74,23 @@
                                 <li>Data da solicitação: {{date('d / m / Y', strtotime($reserva->data_solicitacao))}}</li>
                               </ul>
                             </div>
-                            <div class="btn-acoes">
-                              <a class="btn btn-primary" href="{{route('reservas.edit', $reserva->id)}}"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
-                              {!! Form::open(['route' => ['reservas.destroy', $reserva->id], 'method' => 'DELETE']) !!}
-                                <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-trash"></span> Excluir</button>
-                              {!! Form::close() !!}
+                            <div class="btn-adm">
+                              <div class="btn-acoes">
+                                {!! Form::open(['url' => '/reservas/confirmar', 'method' => 'POST']) !!}
+                                <input type="hidden" name="id" value="{{$reserva->id}}"></input>
+                                <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-ok"></span> Confirmar</button>
+                                {!! Form::close() !!}
+                                {!! Form::open(['url' => '/reservas/recusar', 'method' => 'POST']) !!}
+                                <input type="hidden" name="id" value="{{$reserva->id}}"></input>
+                                <button style="margin-left: 1em" class="btn btn-warning" type="submit"><span class="glyphicon glyphicon-remove"></span> Recusar</button>
+                                {!! Form::close() !!}
+                              </div>
+                              <div class="btn-acoes">
+                                <a class="btn btn-primary" href="{{route('reservas.edit', $reserva->id)}}"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
+                                {!! Form::open(['route' => ['reservas.destroy', $reserva->id], 'method' => 'DELETE']) !!}
+                                  <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-trash"></span> Excluir</button>
+                                {!! Form::close() !!}
+                              </div>
                             </div>
                           </div>
                       </td>

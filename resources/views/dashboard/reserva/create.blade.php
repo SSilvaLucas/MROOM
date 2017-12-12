@@ -20,9 +20,7 @@
             <legend class="legend">Nova Solicitação</legend>
             @if(isset($errors) && count($errors) > 0)
             <div class="alert alert-danger">
-              @foreach ($errors->all() as $error)
-                <p>{{$error}}</p>
-              @endforeach
+                <p>{{$errors}}</p>
             </div>
             @endif
             {!! csrf_field() !!}
@@ -41,7 +39,7 @@
               <select id="ambiente_id" name="ambiente_id" class="form-control" required>
                 <option disabled selected> - Selecione - </option>
                 @foreach($ambientes as $ambiente)
-                  <option value="{{$ambiente->id}}">{{$ambiente->nome}}</option>
+                  <option @if(old('ambiente_id') == $ambiente->id) {{'selected="selected"'}} @endif value="{{$ambiente->id}}">{{$ambiente->nome}}</option>
                 @endforeach
               </select>
             </div>

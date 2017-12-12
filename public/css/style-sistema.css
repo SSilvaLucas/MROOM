@@ -47,6 +47,10 @@ body{
     border: .125em solid #fff;
     border-radius: .5em;
 }
+.btn-adm{
+    display: flex;
+    justify-content: space-between;
+}
 .btns-cadastro{
     display: flex;
     width: 100%;

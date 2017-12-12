@@ -32,10 +32,6 @@ class PaisController extends Controller{
     public function store(Request $request){
         $dataForm = $request->all();
 
-        if(!isset($dataForm['nome']) || $dataForm['nome'] == ''){
-            $dataForm['nome'] = 'Nome nulo';
-        }
-
         $this->validate($request, $this->pais->rules, $this->pais->msg);
         $insert = $this->pais->create($dataForm);
 

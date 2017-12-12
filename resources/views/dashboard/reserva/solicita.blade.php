@@ -80,27 +80,25 @@
             <legend class="legend">Nova Solicitação</legend>
             @if(isset($errors) && count($errors) > 0)
             <div class="alert alert-danger">
-              @foreach ($errors->all() as $error)
-                <p>{{$error}}</p>
-              @endforeach
+                <p>{{$errors}}</p>
             </div>
             @endif
             {!! csrf_field() !!}
             <div class="form-group">
               <div class="form-group">
                 <label for="ambiente_id">Ambiente: </label>
-                <select id="ambiente_id" name="ambiente_id" class="form-control" disabled>
-                    <option disabled selected value="{{$ambiente->id}}">{{$ambiente->nome}}</option>
+                <select id="ambiente_id" name="ambiente_id" class="form-control">
+                    <option selected value="{{$ambiente->id}}">{{$ambiente->nome}}</option>
                 </select>
             </div>
               <div class="form-2-linha-control">
                 <div class="form-metade form-group">
                   <label for="data_inicio">Data de Início: </label>
-                  <input id="data_inicio" name="data_inicio" type="date" class="form-control" placeholder="dd/mm/aa" required value="{{$verificaForm['data_inicio']}}" disabled>
+                  <input id="data_inicio" name="data_inicio" type="date" class="form-control" placeholder="dd/mm/aa" required value="{{$verificaForm['data_inicio']}}">
                 </div>
                 <div class="form-metade form-group">
                   <label for="data_fim">Data de Fim: </label>
-                  <input id="data_fim" name="data_fim" type="date" class="form-control" placeholder="dd/mm/aa" required value="{{$verificaForm['data_fim']}}" disabled>
+                  <input id="data_fim" name="data_fim" type="date" class="form-control" placeholder="dd/mm/aa" required value="{{$verificaForm['data_fim']}}">
                 </div>
               </div>
               <div class="form-2-linha-control">

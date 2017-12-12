@@ -85,6 +85,9 @@
 .solicitada{
   color: orange;
 }
+.recusada{
+  color: red;
+}
 .titulo-collapse{
   text-align: center;
   margin-bottom: 2em;
