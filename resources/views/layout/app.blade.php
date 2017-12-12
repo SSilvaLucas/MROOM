@@ -56,11 +56,6 @@
                       <span class="glyphicon glyphicon-wrench"></span> Manutenções
                     </a>
                 </li>
-                <li>
-                    <a href="#link-organizacao">
-                      <span class="glyphicon glyphicon-stats"></span> Usuários
-                    </a>
-                </li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->nome }} <span class="caret"></span></a>
@@ -133,12 +128,6 @@
                   <a style="text-decoration:none" class="iten-desktop" href="/manutencoes">
                     <span class="glyphicon glyphicon-wrench"></span>
                     <p>Manutenções</p>
-                  </a>
-                </li>
-                <li>
-                  <a style="text-decoration:none" class="iten-desktop" href="/usuarios">
-                    <span class="glyphicon glyphicon-stats"></span>
-                    <p>Usuários</p>
                   </a>
                 </li>
               </ul>

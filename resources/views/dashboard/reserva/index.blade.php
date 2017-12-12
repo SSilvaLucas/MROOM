@@ -86,7 +86,6 @@
                                 {!! Form::close() !!}
                               </div>
                               <div class="btn-acoes">
-                                <a class="btn btn-primary" href="{{route('reservas.edit', $reserva->id)}}"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
                                 {!! Form::open(['route' => ['reservas.destroy', $reserva->id], 'method' => 'DELETE']) !!}
                                   <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-trash"></span> Excluir</button>
                                 {!! Form::close() !!}

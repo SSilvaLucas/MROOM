@@ -4,32 +4,54 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::resource('/equipamentos','EquipamentosController');
+Route::middleware(['auth'])->group(function(){
 
-Route::group(['namespace' => 'Painel'], function(){
-    Route::resource('/configuracoes/tipos-equipamentos', 'TipoEquipamentoController');
+  Route::resource('/equipamentos','EquipamentosController');
 
-    Route::resource('/configuracoes/tipos-ambientes', 'TipoAmbienteController');
+  Route::group(['namespace' => 'Painel'], function(){
+      Route::resource('/configuracoes/tipos-equipamentos', 'TipoEquipamentoController');
 
-    Route::resource('/configuracoes/status-reservas', 'StatusReservaController');
+      Route::resource('/configuracoes/tipos-ambientes', 'TipoAmbienteController');
 
-    Route::resource('/configuracoes/horarios', 'HorarioController');
+      Route::resource('/configuracoes/status-reservas', 'StatusReservaController');
 
-    Route::resource('/configuracoes/setores', 'SetorController');
+      Route::resource('/configuracoes/horarios', 'HorarioController');
 
-    Route::resource('/configuracoes/ddds', 'DddController');
+      Route::resource('/configuracoes/setores', 'SetorController');
 
-    Route::resource('/configuracoes/paises', 'PaisController');
+      Route::resource('/configuracoes/ddds', 'DddController');
 
-    Route::resource('/configuracoes/estados', 'EstadoController');
+      Route::resource('/configuracoes/paises', 'PaisController');
 
-    Route::resource('/configuracoes/cidades', 'CidadeController');
+      Route::resource('/configuracoes/estados', 'EstadoController');
 
-    Route::get('configuracoes', function () {
-        return view('/painel/index');
-    });
+      Route::resource('/configuracoes/cidades', 'CidadeController');
+
+      Route::get('configuracoes', function () {
+          return view('/painel/index');
+      });
+
+  });
+
+  Route::group(['namespace' => 'Dashboard'], function(){
+      Route::resource('/ambientes', 'AmbienteController');
+
+      Route::resource('/equipamentos', 'EquipamentoController');
+
+      Route::resource('/manutencoes', 'ManutencaoController');
+
+      Route::post('/reservas/confirmar', 'ReservaController@confirmar');
+
+      Route::post('/reservas/recusar', 'ReservaController@recusar');
+
+      Route::resource('/reservas', 'ReservaController');
+
+      Route::post('/reservas/solicita', 'ReservaController@solicita');
+
+  });
 
 });
+
 
 Auth::routes();
 
@@ -38,20 +60,3 @@ Route::group(['namespace' => 'Auth'], function(){
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(['namespace' => 'Dashboard'], function(){
-    Route::resource('/ambientes', 'AmbienteController');
-
-    Route::resource('/equipamentos', 'EquipamentoController');
-
-    Route::resource('/manutencoes', 'ManutencaoController');
-
-    Route::post('/reservas/confirmar', 'ReservaController@confirmar');
-
-    Route::post('/reservas/recusar', 'ReservaController@recusar');
-
-    Route::resource('/reservas', 'ReservaController');
-
-    Route::post('/reservas/solicita', 'ReservaController@solicita');
-
-});
